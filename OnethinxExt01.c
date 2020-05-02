@@ -63,7 +63,7 @@ coreStatus_t LoRa_TX(LoRaParams_t * LoRaParams, RadioStatus_t * RadioStatus, uin
 	return coreComm(coreFunction_L_TX, true);
 }
 
-void  LoRaWAN_Debug(bool debugLedsOn, uint32_t * coreStatePNT)
+void LoRaWAN_Debug(bool debugLedsOn, uint32_t * coreStatePNT)
 {
 	if (debugLedsOn)		// Debug LEDs should be connected to P12_4 and P12_5
 	{
@@ -75,4 +75,11 @@ void  LoRaWAN_Debug(bool debugLedsOn, uint32_t * coreStatePNT)
 	coreArguments.arg3 = 0;
 	coreArguments.arg4 = 0; 
 	coreComm(coreFunction_Debug, false);
+}
+
+// Use the Unlock function before using any other extended functions. Unlocking may void LoRa Alliance Certification by Similarity.
+void LoRaWAN_Unlock()
+{
+	coreArguments.arg1 = 0x4B1D;
+	coreComm(coreFunction_Unlock, true);
 }
