@@ -8,6 +8,7 @@ typedef enum {
 	coreFunction_L_RX 					= 0x80,
 	coreFunction_L_TX 					= 0x81,
     coreFunction_Debug                  = 0xA3,
+    coreFunction_Unlock                 = 0xA4,
 } coreFunctionsExt_e;
 
 /*!
@@ -215,9 +216,11 @@ typedef struct
 
 // Open stack implementation below
 
-
-
 coreStatus_t        LoRa_RX(LoRaParams_t * LoRaParams, RadioStatus_t * RadioStatus, uint8_t * payload, uint8_t payloadSize, uint16_t timeOutMS);
 coreStatus_t        LoRa_TX(LoRaParams_t * LoRaParams, RadioStatus_t * RadioStatus, uint8_t * payload, uint8_t payloadSize, uint16_t timeOutMS);
-void                LoRaWAN_Debug(bool debugLedsOn, uint32_t * coreStatePNT);  
+void                LoRaWAN_Debug(bool debugLedsOn, uint32_t * coreStatePNT); 
+
+// Use the Unlock function before using any other extended functions. Unlocking may void LoRa Alliance Certification by Similarity.
+void                LoRaWAN_Unlock();
+
 #endif /* ONETHINXEXT01_H */
