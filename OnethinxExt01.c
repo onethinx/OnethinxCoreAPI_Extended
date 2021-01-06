@@ -42,25 +42,27 @@
 #include "OnethinxExt01.h"
 #include "cy_gpio.h"
 
-extern  coreStatus_t coreComm(coreFunctions_e function, bool waitTillFinished);
+extern  coreStatus_t coreComm(coreFunctions_e function, WaitMode_e waitMode);
 extern  volatile coreArguments_t coreArguments;
 
-coreStatus_t LoRa_RX(LoRaParams_t * LoRaParams, RadioStatus_t * RadioStatus, uint8_t * payload, uint8_t payloadSize, uint16_t timeOutMS)
+coreStatus_t LoRa_RX(RadioParams_t * RadioParams, RadioStatus_t * RadioStatus, uint8_t * payload, uint8_t payloadSize, uint16_t timeOutMS, WaitMode_e waitMode)
 {
-	coreArguments.arg1 = (uint32_t) LoRaParams;
+	coreArguments.arg1 = (uint32_t) RadioParams;
 	coreArguments.arg2 = (uint32_t) RadioStatus;
 	coreArguments.arg3 = (uint32_t) payload;
 	coreArguments.arg4 = (payloadSize << 16) | timeOutMS; 
-	return coreComm(coreFunction_L_RX, true);
+	coreStatus_t coreStatus = coreComm(coreFunction_L_RX, waitMode);
+	coreStatus.mac.bytesToRead = coreArguments.arg4;
+	return coreStatus;
 }
 
-coreStatus_t LoRa_TX(LoRaParams_t * LoRaParams, RadioStatus_t * RadioStatus, uint8_t * payload, uint8_t payloadSize, uint16_t timeOutMS)
+coreStatus_t LoRa_TX(RadioParams_t * RadioParams, RadioStatus_t * RadioStatus, uint8_t * payload, uint8_t payloadSize, uint16_t timeOutMS, WaitMode_e waitMode)
 {
-	coreArguments.arg1 = (uint32_t) LoRaParams;
+	coreArguments.arg1 = (uint32_t) RadioParams;
 	coreArguments.arg2 = (uint32_t) RadioStatus;
 	coreArguments.arg3 = (uint32_t) payload;
 	coreArguments.arg4 = (payloadSize << 16) | timeOutMS; 
-	return coreComm(coreFunction_L_TX, true);
+	return coreComm(coreFunction_L_TX, waitMode);
 }
 
 void LoRaWAN_Debug(bool debugLedsOn, uint32_t * coreStatePNT)
