@@ -3,6 +3,17 @@ Extended Stack API for low-level LoRa communication on the Onethinx Core
 
 These API functions allow to communicate with the SX1261 and SX1262 directly. 
 
+| Stack version | LoRa API version | Where to find                                                                                                          |
+|---------------|------------------|------------------------------------------------------------------------------------------------------ -----------------|
+| 0x000000B8    | 0x000000B8       | [Onethinx GitHub LoRa CoreAPI 0x000000B8](https://github.com/onethinx/OnethinxCoreAPI_Extended/tree/master/0x000000B8) |
+| 0x000000B9    | 0x000000B8       | [Onethinx GitHub LoRa CoreAPI 0x000000B8](https://github.com/onethinx/OnethinxCoreAPI_Extended/tree/master/0x000000B8) |
+| 0x000000BA    | 0x000000B8       | [Onethinx GitHub LoRa CoreAPI 0x000000B8](https://github.com/onethinx/OnethinxCoreAPI_Extended/tree/master/0x000000B8) |
+| 0x000000BB    | 0x000000B8       | [Onethinx GitHub LoRa CoreAPI 0x000000BB](https://github.com/onethinx/OnethinxCoreAPI_Extended/tree/master/0x000000B8) |
+| 0x000000BC    | 0x000000B8       | [Onethinx GitHub LoRa CoreAPI 0x000000BB](https://github.com/onethinx/OnethinxCoreAPI_Extended/tree/master/0x000000B8) |
+| 0x000000BD    | 0x000000B8       | not public
+| 0x000000BE    | 0x000000BE       | [Onethinx GitHub LoRa CoreAPI 0x000000BE](https://github.com/onethinx/OnethinxCoreAPI_Extended/tree/master/0x000000BE) |
+| 0x000000BF    | 0x000000BE       | [Onethinx GitHub LoRa CoreAPI 0x000000BE](https://github.com/onethinx/OnethinxCoreAPI_Extended/tree/master/0x000000BE) |
+
 **Example**
 
 Initialization:
