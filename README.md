@@ -13,6 +13,7 @@ These API functions allow to communicate with the SX1261 and SX1262 directly.
 | 0x000000BD    | 0x000000B8       |
 | 0x000000BE    | [0x000000BE](https://github.com/onethinx/OnethinxCoreAPI_Extended/tree/master/0x000000BE) |
 | 0x000000BF    | [0x000000BE](https://github.com/onethinx/OnethinxCoreAPI_Extended/tree/master/0x000000BE) |
+| 0x000000C1    | [0x000000C1](https://github.com/onethinx/OnethinxCoreAPI_Extended/tree/master/0x000000C1) |
 
 **Example**
 
